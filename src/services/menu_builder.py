@@ -26,4 +26,5 @@ class MenuBuilder:
 
     # Req 4
     def get_main_menu(self, restriction=None) -> List[Dict]:
+        "teste"
         pass
