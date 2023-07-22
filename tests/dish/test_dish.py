@@ -2,6 +2,7 @@ from src.models.dish import Dish  # noqa: F401, E261, E501
 from src.models.ingredient import Ingredient
 import pytest
 
+
 # Req 2
 def test_dish():
 
@@ -9,7 +10,6 @@ def test_dish():
     assert isinstance(dish, Dish)
     assert dish.name == "Lasanha"
     assert dish.price == 35.99
-
 
     assert repr(dish) == "Dish('Lasanha', R$35.99)"
 
@@ -37,7 +37,7 @@ def test_dish():
     assert dish.recipe.get(ingredient3) is None
 
     restrictions = dish.get_restrictions()
-    assert len(restrictions) == 0  
+    assert len(restrictions) == 0
 
     ingredients_set = dish.get_ingredients()
     assert ingredient1 in ingredients_set
@@ -49,7 +49,3 @@ def test_dish():
 
     with pytest.raises(ValueError):
         Dish("Strogonoff", -10)
-
-    # with pytest.raises(TypeError):
-    #     Dish("feijao com arroz", 35.99)    
-
